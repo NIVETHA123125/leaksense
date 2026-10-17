@@ -1,0 +1,3 @@
+# Wokwi Arduino Library Dependencies
+ArduinoJson
+LiquidCrystal I2C

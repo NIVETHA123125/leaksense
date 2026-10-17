@@ -1,0 +1,15 @@
+# Local configuration template - Copy to application-local.properties and fill with your environment values
+# DO NOT commit real secrets or production credentials to Git!
+
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
+
+# 64-character (256-bit) base64 or secure secret for JWT signing
+leaksense.jwt.secret=REPLACE_WITH_64_CHAR_BASE64_SECRET
+
+# Edge node ingest API key (sent in X-API-KEY header by ESP32/cellular nodes)
+leaksense.device.api-key=REPLACE_WITH_64_CHAR_HEX_API_KEY
+
+# Optional SMTP configuration for email alerting
+spring.mail.username=your_alert_email@example.com
+spring.mail.password=your_app_specific_password

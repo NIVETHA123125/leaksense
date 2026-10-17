@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "author": "LeakSense Systems Engineering",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 10, "left": 10, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_gas",
+      "top": -160,
+      "left": -220,
+      "attrs": { "label": "1. MQ-4 Methane (CH4)" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_pressure",
+      "top": -40,
+      "left": -220,
+      "attrs": { "label": "2. MPX5700DP Pressure" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_o2",
+      "top": 80,
+      "left": -220,
+      "attrs": { "label": "3. ME2-O2 Oxygen Cell" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic",
+      "top": 210,
+      "left": -230,
+      "attrs": { "label": "4. MA40S4R Ultrasonic Acoustic" }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": -120,
+      "left": 230,
+      "attrs": { "label": "12V Solenoid Valve Actuator (Relay)" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_valve_open",
+      "top": -20,
+      "left": 220,
+      "attrs": { "color": "green", "label": "Valve OPEN" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_valve_closed",
+      "top": -20,
+      "left": 280,
+      "attrs": { "color": "red", "label": "Valve CLOSED" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 70,
+      "left": 240,
+      "attrs": { "label": "Piezo Siren Alarm" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_status",
+      "top": 170,
+      "left": 250,
+      "attrs": { "color": "cyan", "label": "Heartbeat / TX" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -240,
+      "left": 10,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+
+    [ "esp:3V3", "pot_gas:VCC", "red", [] ],
+    [ "esp:GND.1", "pot_gas:GND", "black", [] ],
+    [ "pot_gas:SIG", "esp:D34", "orange", [] ],
+
+    [ "esp:3V3", "pot_pressure:VCC", "red", [] ],
+    [ "esp:GND.1", "pot_pressure:GND", "black", [] ],
+    [ "pot_pressure:SIG", "esp:D35", "blue", [] ],
+
+    [ "esp:3V3", "pot_o2:VCC", "red", [] ],
+    [ "esp:GND.1", "pot_o2:GND", "black", [] ],
+    [ "pot_o2:SIG", "esp:D32", "green", [] ],
+
+    [ "esp:VIN", "ultrasonic:VCC", "red", [] ],
+    [ "esp:GND.1", "ultrasonic:GND", "black", [] ],
+    [ "esp:D5", "ultrasonic:TRIG", "purple", [] ],
+    [ "esp:D18", "ultrasonic:ECHO", "white", [] ],
+
+    [ "esp:VIN", "relay:VCC", "red", [] ],
+    [ "esp:GND.2", "relay:GND", "black", [] ],
+    [ "esp:D25", "relay:IN", "purple", [] ],
+
+    [ "esp:D2", "led_valve_open:A", "green", [] ],
+    [ "esp:GND.2", "led_valve_open:C", "black", [] ],
+
+    [ "esp:D4", "led_valve_closed:A", "red", [] ],
+    [ "esp:GND.2", "led_valve_closed:C", "black", [] ],
+
+    [ "esp:GND.2", "buzzer:1", "black", [] ],
+    [ "esp:D26", "buzzer:2", "yellow", [] ],
+
+    [ "esp:D27", "led_status:A", "cyan", [] ],
+    [ "esp:GND.2", "led_status:C", "black", [] ],
+
+    [ "esp:VIN", "lcd:VCC", "red", [] ],
+    [ "esp:GND.1", "lcd:GND", "black", [] ],
+    [ "esp:D21", "lcd:SDA", "cyan", [] ],
+    [ "esp:D22", "lcd:SCL", "magenta", [] ]
+  ],
+  "dependencies": {}
+}

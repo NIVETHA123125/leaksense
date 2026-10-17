@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeakSense — Autonomous IoT Pipeline Safety & Leak Mitigation Platform</title>
+  <meta name="description" content="Industrial IoT safety platform with real-time multi-sensor telemetry (methane, pressure, oxygen), autonomous solenoid valve isolation, predictive AI early-warning, and executive compliance reports.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="container nav-wrapper">
+        <a href="/" class="brand-logo" id="navBrandLogo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: #06b6d4;">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+          <span>LeakSense</span>
+          <span class="brand-badge">IoT Core</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#hardware" class="nav-link">Hardware Specs</a></li>
+          <li><a href="#ai-capabilities" class="nav-link">AI Engine</a></li>
+          <li><a href="#demo" class="nav-link">Request Demo</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="http://localhost:5173" class="btn btn-outline" id="navBtnDashboard" target="_blank">Dashboard App</a>
+          <a href="#demo" class="btn btn-primary" id="navBtnGetStarted">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="live-badge-wrapper" id="liveStatusBadge">
+          <span class="pulse-dot"></span>
+          <span>System Status: Active & Monitored</span>
+        </div>
+
+        <h1 class="hero-title">
+          Autonomous Pipeline Safety &<br>
+          <span>Predictive Leak Mitigation</span>
+        </h1>
+
+        <p class="hero-desc">
+          Continuous industrial monitoring combining high-frequency combustible methane, line pressure, and oxygen sensing with predictive AI early warnings and sub-second solenoid valve isolation.
+        </p>
+
+        <div class="hero-cta">
+          <a href="http://localhost:5173" class="btn btn-primary" id="heroBtnLaunch" target="_blank">
+            Launch Live Dashboard
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#demo" class="btn btn-outline" id="heroBtnDemo">Request Hardware Demo</a>
+        </div>
+
+        <!-- Metric Ribbon -->
+        <div class="stats-ribbon">
+          <div class="stat-card">
+            <div class="stat-val" id="healthScoreVal">99.8%</div>
+            <div class="stat-label">System Safety Rating</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val">&lt; 1.2s</div>
+            <div class="stat-label">Valve Cutoff Response</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val">Multi-Sensor</div>
+            <div class="stat-label">Methane, Pressure, O2</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val">24/7/365</div>
+            <div class="stat-label">Autonomous Telemetry</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Enterprise Architecture</span>
+          <h2 class="section-title">Built for Critical Industrial Infrastructure</h2>
+          <p class="section-desc">Designed from the edge up to eliminate gas explosion risks, pipeline rupture cascades, and toxic asphyxiation hazards.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <article class="feature-card">
+            <div class="card-top">
+              <div class="feature-icon-box">📊</div>
+              <span class="feature-badge">Edge Telemetry</span>
+            </div>
+            <h3 class="feature-title">Multi-Sensor Ingestion</h3>
+            <p class="feature-desc">Continuous high-resolution ingestion of combustible methane (ppm), line pressure (kPa), oxygen (%), and node battery health over Wi-Fi / LoRaWAN.</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card">
+            <div class="card-top">
+              <div class="feature-icon-box">🛡️</div>
+              <span class="feature-badge">Physical Safety</span>
+            </div>
+            <h3 class="feature-title">Autonomous Solenoid Isolation</h3>
+            <p class="feature-desc">Automatic valve isolation within 800 milliseconds upon critical limit breach, complete with mechanical stuck-detection and remote operator controls.</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card">
+            <div class="card-top">
+              <div class="feature-icon-box">🧠</div>
+              <span class="feature-badge">AI Predictive</span>
+            </div>
+            <h3 class="feature-title">Pre-Rupture Early Warning</h3>
+            <p class="feature-desc">Mathematical derivative analysis detects pressure decay correlations combined with gas creeping before hazardous concentrations occur.</p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="feature-card">
+            <div class="card-top">
+              <div class="feature-icon-box">🔔</div>
+              <span class="feature-badge">Omni-Channel</span>
+            </div>
+            <h3 class="feature-title">Real-Time Multi-Channel Alerts</h3>
+            <p class="feature-desc">Live WebSocket browser popups, in-app notification center, automated email briefings, and Twilio SMS dispatch for CRITICAL level incidents.</p>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="feature-card">
+            <div class="card-top">
+              <div class="feature-icon-box">💬</div>
+              <span class="feature-badge">AI Assistant</span>
+            </div>
+            <h3 class="feature-title">Operator Chatbot Assistant</h3>
+            <p class="feature-desc">Natural language AI assistant connected to live database context to query valve states, offline nodes, battery levels, and emergency response guidelines.</p>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="feature-card">
+            <div class="card-top">
+              <div class="feature-icon-box">📑</div>
+              <span class="feature-badge">Compliance</span>
+            </div>
+            <h3 class="feature-title">Executive PDF Audits</h3>
+            <p class="feature-desc">Scheduled weekly PDF compliance reports delivered via email with KPI summaries, leak histories, alarm sirens, and emergency valve logs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hardware Specifications Section -->
+    <section class="hardware-section" id="hardware">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Industrial Hardware</span>
+          <h2 class="section-title">Field Sensor & Edge Node Specifications</h2>
+          <p class="section-desc">Ruggedized field hardware certified for hazardous area pipeline segments.</p>
+        </div>
+
+        <table class="hardware-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Hardware Model</th>
+              <th>Operating Range</th>
+              <th>Operational Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Microcontroller</strong></td>
+              <td>ESP32-WROOM-32 / LoRaWAN</td>
+              <td><span class="tag-spec">2.4 GHz / 868-915 MHz</span></td>
+              <td>Telemetry ingestion, edge threshold logic & command execution</td>
+            </tr>
+            <tr>
+              <td><strong>Methane Sensor</strong></td>
+              <td>MQ-4 Semiconductor</td>
+              <td><span class="tag-spec">300 – 10,000 ppm CH4</span></td>
+              <td>High-sensitivity combustible hydrocarbon leak detection</td>
+            </tr>
+            <tr>
+              <td><strong>Pressure Transducer</strong></td>
+              <td>MPX5700 Piezoresistive</td>
+              <td><span class="tag-spec">0 – 700 kPa (101.5 psi)</span></td>
+              <td>Pipeline line pressure integrity, rupture & drop monitoring</td>
+            </tr>
+            <tr>
+              <td><strong>Oxygen Sensor</strong></td>
+              <td>ME2-O2 Electrochemical</td>
+              <td><span class="tag-spec">0 – 25% Vol O2</span></td>
+              <td>Atmospheric displacement & confined space asphyxiation protection</td>
+            </tr>
+            <tr>
+              <td><strong>Isolation Actuator</strong></td>
+              <td>12V/24V Solenoid Valve</td>
+              <td><span class="tag-spec">&lt; 800ms actuation</span></td>
+              <td>Physical line cutoff with fail-safe normally closed configuration</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Demo Request Section -->
+    <section class="demo-section" id="demo">
+      <div class="container">
+        <div class="demo-card">
+          <div class="demo-info">
+            <span class="section-tag">Get Started</span>
+            <h3>Ready to Protect Your Infrastructure?</h3>
+            <p>Schedule a live hardware demonstration or speak with our industrial pipeline automation engineering team.</p>
+            <ul class="demo-features-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Complete turnkey IoT edge node deployment
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Autonomous valve shutoff within sub-second thresholds
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Full REST, WebSocket, and SCADA integration
+              </li>
+            </ul>
+          </div>
+
+          <form class="demo-form" id="demoForm">
+            <div class="form-group">
+              <label class="form-label" for="demoName">Full Name</label>
+              <input type="text" id="demoName" class="form-input" placeholder="e.g. Elena Rostova" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demoEmail">Work Email</label>
+              <input type="email" id="demoEmail" class="form-input" placeholder="e.g. elena@energycorp.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demoCompany">Organization / Facility</label>
+              <input type="text" id="demoCompany" class="form-input" placeholder="e.g. Northwind Gas Terminal" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demoMessage">Message (Optional)</label>
+              <textarea id="demoMessage" class="form-textarea" placeholder="Tell us about your pipeline monitoring requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnSubmitDemo">Submit Demo Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: #06b6d4;">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+          <span>LeakSense IoT</span>
+        </div>
+        <div>
+          <a href="/api/public/landing" target="_blank" style="color: var(--accent-cyan); text-decoration: none; margin-right: 20px;">Landing API (JSON)</a>
+          <a href="/api/public/status" target="_blank" style="color: var(--accent-cyan); text-decoration: none;">Public Status API</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 LeakSense Industrial IoT. Autonomous Pipeline Safety & Hazard Mitigation Platform. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

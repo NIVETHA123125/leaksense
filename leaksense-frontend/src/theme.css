@@ -1,0 +1,405 @@
+/* ==========================================================================
+   LEAKSENSE ENTERPRISE DESIGN SYSTEM - SINGLE AUTHORITATIVE THEME
+   - Style: Corporate Professional Enterprise (Light)
+   - Typography: Satoshi sans-serif (weights 400-900)
+   - Colors: Primary Blue (var(--primary)), Slate 950 (#020617), Deep Slate (#151e2e)
+   - Status: Success (#16a34a), Warning (#d97706), Error (#dc2626)
+   - Borders: 12px cards, 8px buttons/inputs, 1px solid #e2e8f0
+   - Hover: var(--primary-tint) with 0.2s cubic-bezier(0.4, 0, 0.2, 1) transition
+   ========================================================================== */
+
+:root {
+  /* Central Source of Truth: Indigo Palette */
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --primary-active: #3730A3;
+  --primary-tint: #EEF2FF;
+  --primary-border: #C7D2FE;
+  --primary-dark: #1E1B4B;
+
+  --bg: #ffffff;
+  --bg-sidebar: #f8fafc;        /* Slate 50 */
+  --panel: #ffffff;
+  --panel-2: #f8fafc;           /* Muted BG */
+  --panel-3: #f1f5f9;
+  --hover: var(--primary-tint); /* Signature indigo hover */
+  --border: #e2e8f0;            /* Subtle 1px solid border */
+  --border-soft: #f1f5f9;
+  --border-input: #cbd5e1;
+  --text: #020617;              /* Deep Slate 950 */
+  --text-muted: #475569;        /* Slate 600 */
+  --text-faint: #94a3b8;        /* Slate 400 */
+  --accent: var(--primary);     /* Primary Indigo */
+  --accent-hover: var(--primary-hover);
+  --accent-active: var(--primary-active);
+  --accent-bg: var(--primary-tint);
+  --on-accent: #ffffff;
+  --ok: #16a34a;
+  --ok-bg: #dcfce7;
+  --warn: #d97706;
+  --warn-bg: #fef9c3;
+  --err: #dc2626;
+  --err-bg: #fee2e2;
+  --overlay: rgba(15, 23, 42, 0.45);
+  --shadow: 0 20px 25px -5px rgba(226, 232, 240, 0.7), 0 8px 10px -6px rgba(226, 232, 240, 0.5);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  color-scheme: light;
+}
+
+/* Global Typography & Base Elements */
+body, input, button, select, textarea {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.625;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* Modal styling */
+.modal-overlay {
+  background: var(--overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+
+/* Sidebar styling aligned with landing preview */
+.sidebar {
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-brand small, .sidebar-section {
+  color: var(--text-faint);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  border-radius: var(--radius-btn);
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+
+.nav-link.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.sidebar-user {
+  background: var(--panel-3);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+}
+
+.avatar {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 800;
+}
+
+.logout-btn {
+  color: var(--text);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-btn);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logout-btn:hover {
+  background: var(--hover);
+  border-color: var(--border);
+}
+
+/* Topbar Glass-Panel Alignment */
+.topbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  color: var(--text-faint);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.breadcrumb strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.hamburger {
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger:hover {
+  background: var(--hover);
+  border-color: var(--accent);
+}
+
+.zone-select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-btn);
+  transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zone-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-bg);
+}
+
+/* Page Headers */
+.page-eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 6px 0;
+  color: var(--text);
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Panels & Cards */
+.panel, .summary-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel:hover {
+  border-color: var(--border-input);
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.summary-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.summary-value {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Data Tables */
+.data-table th {
+  color: var(--text-faint);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-2);
+}
+
+.data-table td {
+  border-bottom: 1px solid var(--border-soft);
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.data-table tbody tr:hover td {
+  background-color: var(--hover) !important;
+}
+
+.field-hint {
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1.5px solid var(--accent) !important;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  background: rgba(79, 70, 229, 0.08) !important;
+  border-color: var(--accent-hover) !important;
+  color: var(--accent-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.btn-ghost {
+  background: transparent !important;
+  color: var(--text) !important;
+  border: 1.5px solid var(--border-input) !important;
+  border-radius: var(--radius-btn);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-ghost:hover {
+  background: var(--hover) !important;
+  border-color: var(--border) !important;
+}
+
+.btn-danger {
+  background: transparent !important;
+  color: var(--err) !important;
+  border: 1.5px solid var(--err) !important;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-danger:hover {
+  background: rgba(239, 68, 68, 0.08) !important;
+  border-color: #dc2626 !important;
+  color: #dc2626 !important;
+}
+
+.btn-success {
+  background: transparent !important;
+  color: #16a34a !important;
+  border: 1.5px solid #16a34a !important;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-success:hover {
+  background: rgba(22, 163, 74, 0.08) !important;
+  border-color: #15803d !important;
+  color: #15803d !important;
+}
+
+/* Notices */
+.notice.ok {
+  background: var(--ok-bg);
+  color: var(--ok);
+  border: 1px solid var(--ok);
+}
+
+.notice.error {
+  background: var(--err-bg);
+  color: var(--err);
+  border: 1px solid var(--err);
+}
+
+/* Login Page Aligned */
+.login-brand {
+  background: #020617;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-form-side {
+  background: var(--bg);
+}
+
+.login-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+
+.login-tabs {
+  border-bottom: 1px solid var(--border);
+}
+
+.login-tab {
+  color: var(--text-faint);
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-tab:hover {
+  color: var(--text);
+}
+
+.login-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.login-body .login-sub, .login-label {
+  color: var(--text-muted);
+}
+
+.login-input {
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-btn);
+}
+
+.login-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-bg);
+}
+
+.login-error {
+  color: var(--err);
+}
+
+.login-submit {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1.5px solid var(--accent) !important;
+  border-radius: var(--radius-btn);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-submit:hover:not(:disabled) {
+  background: rgba(79, 70, 229, 0.08) !important;
+  border-color: var(--accent-hover) !important;
+  color: var(--accent-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.15);
+}

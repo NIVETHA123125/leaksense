@@ -1,0 +1,32 @@
+# Node.js / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm
+.vite/
+
+# Java / Maven / Backend
+target/
+*.class
+*.jar
+*.war
+*.ear
+leaksense_backend/src/main/resources/application-local.properties
+
+# Logs
+*.log
+logs/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
